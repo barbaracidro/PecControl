@@ -5,7 +5,7 @@ public class PecControl {
     
     private int oi;
     private int ola; 
-    //coment
+    //comentjxnjxnjcndjnvjdfnvbjkld
     public static void main(String[] args) {
         // TODO code application logic here
     }
