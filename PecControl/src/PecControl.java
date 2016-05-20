@@ -1,11 +1,14 @@
 
-package Codigos;
-
 import Telas.FormMenuInicial;
 
-public class MenuInicial {
+
+public class PecControl {
+
+    
+   
+    public static void main(String[] args) {
        FormMenuInicial form = new FormMenuInicial();
-       form.setLocationRelativeTo(form);
        form.setVisible(true);
+    }
     
 }

@@ -49,12 +49,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="jPanel2" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel2" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -78,17 +80,17 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnInicio" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="76" max="32767" attributes="0"/>
-                  <Component id="btnCadastroBovino" min="-2" pref="140" max="-2" attributes="0"/>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <Component id="btnCadastroBovino" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnCadastroFuncionario" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCadastroFuncionario" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnCadastrodeProdutos" min="-2" pref="148" max="-2" attributes="0"/>
+                  <Component id="btnCadastrodeProdutos" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnVenda" min="-2" pref="133" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnRelatorio" min="-2" pref="122" max="-2" attributes="0"/>
+                  <Component id="btnVenda" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnRelatorio" min="-2" pref="180" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -99,10 +101,10 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnCadastroFuncionario" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btnCadastrodeProdutos" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnRelatorio" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btnCadastroBovino" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btnInicio" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btnVenda" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnRelatorio" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -114,17 +116,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro de Funcion&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroFuncionarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCadastrodeProdutos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnRelatorio">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrodeProdutosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCadastroBovino">
           <Properties>
@@ -143,6 +145,15 @@
         <Component class="javax.swing.JButton" name="btnVenda">
           <Properties>
             <Property name="text" type="java.lang.String" value="Venda"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVendaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnRelatorio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
       </SubComponents>
