@@ -1,13 +1,11 @@
 
 package Telas;
 
-import Codigos.CadastroBovino;
 
-
-public class MenuInicial extends javax.swing.JFrame {
+public class FormMenuInicial extends javax.swing.JFrame {
 
     
-    public MenuInicial() {
+    public FormMenuInicial() {
         initComponents();
     }
 
@@ -134,7 +132,7 @@ public class MenuInicial extends javax.swing.JFrame {
      
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuInicial().setVisible(true);
+                new FormMenuInicial().setVisible(true);
             }
         });
     }

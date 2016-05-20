@@ -40,8 +40,9 @@ public class CadastroProdutoForm extends javax.swing.JDialog {
         edValor = new javax.swing.JTextField();
         edMarca = new javax.swing.JTextField();
         edValidade = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
+        edCancelar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -70,12 +71,19 @@ public class CadastroProdutoForm extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("Salvar");
+        btnSalvar.setText("Salvar");
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        edCancelar.setText("Cancelar");
+        edCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                edCancelarActionPerformed(evt);
+            }
+        });
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
             }
         });
 
@@ -102,10 +110,12 @@ public class CadastroProdutoForm extends javax.swing.JDialog {
                                 .addComponent(edValidade, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(edMarca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
+                        .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64)
-                        .addComponent(jButton2)))
+                        .addComponent(edCancelar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 409, Short.MAX_VALUE)
@@ -140,8 +150,9 @@ public class CadastroProdutoForm extends javax.swing.JDialog {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnSalvar)
+                    .addComponent(edCancelar)
+                    .addComponent(btnLimpar))
                 .addContainerGap())
         );
 
@@ -164,16 +175,24 @@ public class CadastroProdutoForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void edCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCodActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_edCodActionPerformed
 
     private void edMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edMarcaActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_edMarcaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void edCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCancelarActionPerformed
+        
+    }//GEN-LAST:event_edCancelarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+       edCod.setText("");
+        edNome.setText("");
+        edValor.setText("");
+        edMarca.setText("");
+        edValidade.setText("");
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,13 +237,14 @@ public class CadastroProdutoForm extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton edCancelar;
     private javax.swing.JTextField edCod;
     private javax.swing.JTextField edMarca;
     private javax.swing.JTextField edNome;
     private javax.swing.JTextField edValidade;
     private javax.swing.JTextField edValor;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
