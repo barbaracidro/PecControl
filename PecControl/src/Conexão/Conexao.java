@@ -10,11 +10,11 @@ public class Conexao {
        
     try {  
  // jdbc:postgresql://localhost:5432/TesteJava
-            String url = "C:\\Program Files (x86)\\PostgreSQL\\9.0\\data\\boi";  
+            String url = "jdbc:postgresql://localhost:5432/TesteJava/boi";  
             String usuario = "postgres";  
             String senha = "root";  
   
-            Class.forName("org.postgresql.Driver");  
+            Class.forName("");  
   
             Connection con;  
   
