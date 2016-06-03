@@ -102,8 +102,6 @@ public class FormMenuInicial extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\03349151205.IFRO\\Documents\\NetBeansProjects\\PecControl\\PecControl\\PecControl\\PecControl\\src\\Telas\\boi.png")); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Olá Sr José Luiz...");
 

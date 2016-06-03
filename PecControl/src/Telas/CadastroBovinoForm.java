@@ -2,12 +2,17 @@
 package Telas;
 
 
+
+
 public class CadastroBovinoForm extends javax.swing.JDialog {
 
     
     public CadastroBovinoForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+    }
+    public CadastroBovinoForm(){
         
     }
 
