@@ -5,18 +5,21 @@
  */
 package Telas;
 
+import javax.swing.JDialog;
+
 /**
  *
  * @author 02450821236
  */
 public class CadastroProdutoForm extends javax.swing.JDialog {
-
+//ofkf
     /**
      * Creates new form CadastroProdutoForm
      */
     public CadastroProdutoForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+     
     }
 
     /**
