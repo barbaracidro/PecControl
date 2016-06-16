@@ -6,35 +6,28 @@ import java.sql.DriverManager;
 
 
 public class Conexao {
-     public static void main(String[] args) {  
-       
-    try {  
- // jdbc:postgresql://localhost:5432/TesteJava
-            String url = "jdbc:postgresql://localhost:5432/TesteJava/boi";  
-            String usuario = "postgres";  
-            String senha = "root";  
-  
-            Class.forName("");  
-  
-            Connection con;  
-  
-            con = DriverManager.getConnection(url, usuario, senha);  
-  
-            System.out.println("Conexão realizada com sucesso.");  
-  
-           // Statement stm = con.createStatement();  
-  
-            ///stm.executeQuery("INSERT INTO teste VALUES (1,'Cynthia')");  
-  
-            //stm.executeUpdate("INSERT INTO teste VALUES (1,'Cynthia')");  
-            //Editado 21/09/2011 para correção: executeQuery é usado para pesquisa, executeUpdate deve ser usado para inserir  
-            con.close();  
-  
-        } catch (Exception e) {  
-             e.printStackTrace();  
-        }  
-    }  
+    
+    private Connection con;
+    private String url="jdbc:postgresql://localhost:5432/boi";
+    private String usuario = "postgres";
+    private String senha = "root";
+    
+    public void conectar(){
+        Mensagens ms = new Mensagens("PecControl");
+        try{
+            Class.forName("org.postgresql.Driver");
+            this.con= DriverManager.getConnection(url, usuario,senha);
+           
+        }catch(Exception e){
+            ms.erro("Conexão falhou");
+            
+                    
+        }
+    }
+    
+    public Connection getConn(){
+        return con;
+    }
+ 
     
 }
-
-
