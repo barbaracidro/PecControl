@@ -65,5 +65,31 @@ public class ManipulaarDados {
             }
         
     }
+        public void cadastroBovino(BovinoDao b, int i) throws SQLException{
+       String sql = "insert into boi  (numero, peso, dataNasc, codigoVenda";
+        Mensagens ms = new Mensagens("boi");
+        
+        try{
+            
+            i=i++;       
+            conex.conectar();
+            con = conex.getConn();
+            stm = con.prepareStatement(sql);
+            stm.setString(i, b.getNumeroStr());
+            stm.setString(i, b.getPesoStr());
+            stm.setString(i, b.getSexo());
+            stm.execute();
+            ms.informacao("cadastrado");
+            stm.close();
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+            
+        }
+        
+      
+        
+        }
+        }
     
-}
+

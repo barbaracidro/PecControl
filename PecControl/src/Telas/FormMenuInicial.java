@@ -2,11 +2,15 @@
 package Telas;
 
 
+import Conexão.BovinoDao;
 import javax.swing.JFrame;
 
 
 
 import Conexão.ManipulaarDados;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
         
 
@@ -20,8 +24,11 @@ public class FormMenuInicial extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        jMenu3 = new javax.swing.JMenu();
+        boiPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("boiPU").createEntityManager();
+        bovinoQuery = java.beans.Beans.isDesignTime() ? null : boiPUEntityManager.createQuery("SELECT b FROM Bovino b");
+        bovinoList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : bovinoQuery.getResultList();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -116,13 +123,13 @@ public class FormMenuInicial extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         edPesoProd = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel31 = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-
-        jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -774,15 +781,38 @@ public class FormMenuInicial extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Cadastro de Produto", jPanel1);
 
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, bovinoList, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${datanasc}"));
+        columnBinding.setColumnName("Datanasc");
+        columnBinding.setColumnClass(java.util.Date.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${sexo}"));
+        columnBinding.setColumnName("Sexo");
+        columnBinding.setColumnClass(Character.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${peso}"));
+        columnBinding.setColumnName("Peso");
+        columnBinding.setColumnClass(Long.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${numero}"));
+        columnBinding.setColumnName("Numero");
+        columnBinding.setColumnClass(Integer.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+
+        jScrollPane2.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 603, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 45, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jTabbedPane2.addTab("Relatório", jPanel9);
@@ -848,22 +878,27 @@ public class FormMenuInicial extends javax.swing.JFrame {
 
         getAccessibleContext().setAccessibleName("formCadastroBovino");
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
                ManipulaarDados md = new ManipulaarDados();
        
-        md.carregarView();
-        edTeste.setText(null);
-     
-        while(!md.finalLista()){
-            edTeste.append("-------teste \n");
-            edNumero.setText(md.getBovino().getNumeroStr());
-            edDataNasc.setText(md.getBovino().getDataNasc());
-            edTeste.append(md.getBovino().getPesoStr());
-        md.proximo();
+      BovinoDao b = new BovinoDao();
+     b.setNumero(edNumero.getText());
+     b.setDataNasc(edDataNasc.getText());
+     b.setPeso(edPeso.getText());
+      
+        try {
+            md.cadastroBovino(b, WIDTH);
+        } catch (SQLException ex) {
+            Logger.getLogger(FormMenuInicial.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -928,6 +963,9 @@ public class FormMenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.persistence.EntityManager boiPUEntityManager;
+    private java.util.List<Telas.Bovino> bovinoList;
+    private javax.persistence.Query bovinoQuery;
     private javax.swing.JComboBox<String> boxEstadoCivil;
     private javax.swing.JComboBox<String> boxSexo;
     private javax.swing.JButton btnSair;
@@ -1010,7 +1048,6 @@ public class FormMenuInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1022,11 +1059,14 @@ public class FormMenuInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

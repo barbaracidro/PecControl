@@ -1,6 +1,8 @@
 
 package Codigos;
 
+import Conexão.BovinoDao;
+import Conexão.Mensagens;
 import java.util.Date;
 
 //testando 
@@ -17,6 +19,11 @@ public class CadastroBovino {
         this.sexo = sexo;
         this.dataNasc = dataNasc;
     }
-   
+  
+            
+            
+        }
+        
     
-}
+    
+
