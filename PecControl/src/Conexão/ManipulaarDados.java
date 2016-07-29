@@ -1,7 +1,7 @@
 
 package Conexão;
+import Codigos.CadastroBovino;
 import java.sql.*;
-import java.util.ArrayList;
 import  java.util.List;
 
 
@@ -11,6 +11,7 @@ public class ManipulaarDados {
     private PreparedStatement stm;
     private ResultSet rsDados;
     private Connection con = null;
+    
     
     public void carregarView(){
         String sql = "select * from bovino";
@@ -66,7 +67,7 @@ public class ManipulaarDados {
         
     }
         public void cadastroBovino(BovinoDao b, int i) throws SQLException{
-       String sql = "insert into boi  (numero, peso, dataNasc, codigoVenda";
+        String sql = "insert into boi  (numero, peso, dataNasc, codigoVenda)";
         Mensagens ms = new Mensagens("boi");
         
         try{

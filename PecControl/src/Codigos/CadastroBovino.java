@@ -20,7 +20,9 @@ public class CadastroBovino {
         this.dataNasc = dataNasc;
     }
   
-            
+    public CadastroBovino(){
+        
+    }        
             
         }
         

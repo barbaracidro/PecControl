@@ -40,7 +40,7 @@ public class FormMenuInicial extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         btnSair1 = new javax.swing.JButton();
-        comboSexo1 = new javax.swing.JComboBox<String>();
+        comboSexo1 = new javax.swing.JComboBox<>();
         btnSalvar1 = new javax.swing.JButton();
         jTextField11 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
@@ -63,7 +63,7 @@ public class FormMenuInicial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         edDataNasc = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        comboSexo = new javax.swing.JComboBox<String>();
+        comboSexo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         edTeste = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -71,13 +71,13 @@ public class FormMenuInicial extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         edSalario = new javax.swing.JTextField();
         edCpf = new javax.swing.JTextField();
-        boxSexo = new javax.swing.JComboBox<String>();
+        boxSexo = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         edRg = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        boxEstadoCivil = new javax.swing.JComboBox<String>();
+        boxEstadoCivil = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         edNome = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -164,7 +164,7 @@ public class FormMenuInicial extends javax.swing.JFrame {
             }
         });
 
-        comboSexo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Fêmea" }));
+        comboSexo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
 
         btnSalvar1.setText("Salvar");
         btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
@@ -217,8 +217,6 @@ public class FormMenuInicial extends javax.swing.JFrame {
                 edPesoActionPerformed(evt);
             }
         });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -302,7 +300,7 @@ public class FormMenuInicial extends javax.swing.JFrame {
 
         jLabel4.setText("Sexo");
 
-        comboSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Fêmea" }));
+        comboSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
 
         edTeste.setColumns(20);
         edTeste.setRows(5);
@@ -447,7 +445,7 @@ public class FormMenuInicial extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Cadastro Bovino", jPanel3);
 
-        boxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
+        boxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
 
         jLabel1.setText("CPF");
 
@@ -457,7 +455,7 @@ public class FormMenuInicial extends javax.swing.JFrame {
 
         jLabel14.setText("Estado Civil");
 
-        boxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro(a)", "Casado(a)", "Separado(a)" }));
+        boxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro(a)", "Casado(a)", "Separado(a)" }));
 
         jLabel15.setText("Nome");
 
